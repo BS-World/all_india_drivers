@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="All India Drivers - Find reliable professional drivers for local, outstation, personal and corporate driving needs across India.">
+  <title>All India Drivers | Professional Driver Service</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --dark: #0b1220;
+      --soft: #f5f8fc;
+      --text: #1c2533;
+      --muted: #667085;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .navbar {
+      background: rgba(11, 18, 32, .96);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: #fff;
+      font-size: 1.35rem;
+    }
+
+    .hero {
+      min-height: 690px;
+      padding: 125px 0 80px;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(5,12,25,.94) 0%, rgba(5,12,25,.82) 45%, rgba(5,12,25,.35) 100%),
+        url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1.03;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .hero .lead {
+      max-width: 650px;
+      color: #dbe4f0;
+      font-size: 1.15rem;
+    }
+
+    .booking-card {
+      margin-top: -100px;
+      position: relative;
+      z-index: 5;
+      border: 0;
+      border-radius: 22px;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, .14);
+    }
+
+    .section-padding { padding: 90px 0; }
+    .section-title { font-weight: 800; letter-spacing: -.7px; }
+    .section-subtitle { color: var(--muted); max-width: 650px; }
+
+    .service-card, .step-card, .trust-card {
+      height: 100%;
+      border: 1px solid #e8edf4;
+      border-radius: 18px;
+      padding: 28px;
+      background: #fff;
+      transition: .25s ease;
+    }
+
+    .service-card:hover, .step-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(15,23,42,.09);
+    }
+
+    .icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eaf2ff;
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .why-section { background: var(--soft); }
+
+    .driver-banner {
+      border-radius: 26px;
+      padding: 55px;
+      background: linear-gradient(135deg, #0d6efd, #174ea6);
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .driver-banner::after {
+      content: "🚗";
+      position: absolute;
+      right: 6%;
+      bottom: -30px;
+      font-size: 13rem;
+      opacity: .1;
+    }
+
+    .form-control, .form-select {
+      min-height: 48px;
+      border-radius: 10px;
+    }
+
+    .btn {
+      border-radius: 10px;
+      font-weight: 600;
+      padding: 11px 20px;
+    }
+
+    .testimonial {
+      border: 0;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 10px 35px rgba(15,23,42,.07);
+      height: 100%;
+    }
+
+    .stars { color: #f5a623; }
+
+    footer {
+      background: var(--dark);
+      color: #aeb9c9;
+    }
+
+    footer a { color: #dbe4f0; text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,.2);
+      z-index: 1000;
+      text-decoration: none;
+    }
+
+    .small-note { color: var(--muted); font-size: .88rem; }
+    .badge-soft { background: #eaf2ff; color: #0d6efd; }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#home">
+      <span class="brand-mark"><i class="bi bi-car-front-fill"></i></span>
+      <span>All India Drivers</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
+        <li class="nav-item"><a class="nav-link" href="#why-us">Why Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="btn btn-primary" href="#booking">Book a Driver</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <span class="badge rounded-pill bg-primary px-3 py-2 mb-3">
+          <i class="bi bi-shield-check me-1"></i> Reliable Driver Service
+        </span>
+        <h1>Your Trusted Driver,<br><span class="text-primary">Whenever You Need.</span></h1>
+        <p class="lead my-4">
+          Need a driver for your car? All India Drivers helps you find dependable
+          professional drivers for local trips, outstation journeys, personal use,
+          events and business requirements.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#booking" class="btn btn-primary btn-lg">
+            <i class="bi bi-search me-2"></i>Find a Driver
+          </a>
+          <a href="#driver-registration" class="btn btn-outline-light btn-lg">
+            <i class="bi bi-person-plus me-2"></i>Join as Driver
+          </a>
+        </div>
+        <div class="d-flex flex-wrap gap-4 mt-4 text-white-50 small">
+          <span><i class="bi bi-check-circle-fill text-primary me-1"></i>Verified profiles</span>
+          <span><i class="bi bi-check-circle-fill text-primary me-1"></i>Flexible booking</span>
+          <span><i class="bi bi-check-circle-fill text-primary me-1"></i>Local & outstation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="container" id="booking">
+  <div class="card booking-card p-4 p-lg-5">
+    <div class="row align-items-center mb-4">
+      <div class="col-lg-7">
+        <span class="badge badge-soft rounded-pill px-3 py-2 mb-2">Quick Booking</span>
+        <h2 class="section-title mb-2">Find the right driver for your need</h2>
+        <p class="section-subtitle mb-0">Tell us what you need and we'll help you get started.</p>
+      </div>
+      <div class="col-lg-5 text-lg-end mt-3 mt-lg-0">
+        <span class="small-note"><i class="bi bi-clock me-1"></i> Fast booking assistance</span>
+      </div>
+    </div>
+
+    <form id="bookingForm">
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-3">
+          <label class="form-label fw-semibold">Your Name *</label>
+          <input type="text" class="form-control" id="customerName" placeholder="Enter your name" required>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <label class="form-label fw-semibold">Mobile Number *</label>
+          <input type="tel" class="form-control" id="customerPhone" placeholder="10-digit mobile" pattern="[0-9]{10}" required>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <label class="form-label fw-semibold">Service *</label>
+          <select class="form-select" id="serviceType" required>
+            <option value="">Select service</option>
+            <option>Local Driver</option>
+            <option>Outstation Driver</option>
+            <option>Full-Time / Personal Driver</option>
+            <option>Corporate Driver</option>
+            <option>Event / Wedding Driver</option>
+            <option>Night Driver</option>
+          </select>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <label class="form-label fw-semibold">City *</label>
+          <input type="text" class="form-control" id="city" placeholder="Your city" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Date & Time</label>
+          <input type="datetime-local" class="form-control" id="bookingDate">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Additional Requirement</label>
+          <input type="text" class="form-control" id="bookingNote" placeholder="e.g. SUV driver, night duty, outstation...">
+        </div>
+        <div class="col-12 d-flex flex-wrap gap-2 align-items-center mt-3">
+          <button type="submit" class="btn btn-primary btn-lg">
+            <i class="bi bi-whatsapp me-2"></i>Request Driver
+          </button>
+          <span class="small-note">Your request can be sent directly to WhatsApp.</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section-padding" id="services">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge badge-soft rounded-pill px-3 py-2 mb-2">Our Services</span>
+      <h2 class="section-title">A driver for every situation</h2>
+      <p class="section-subtitle mx-auto">Choose the service that fits your travel, personal or business requirement.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="icon-box"><i class="bi bi-geo-alt-fill"></i></div>
+          <h4>Local Driver</h4>
+          <p class="text-secondary">Need a driver for a few hours or a full day within your city? Get a driver for your own car.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="icon-box"><i class="bi bi-signpost-2-fill"></i></div>
+          <h4>Outstation Driver</h4>
+          <p class="text-secondary">Travel to another city without worrying about driving. Book a driver for your journey.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="icon-box"><i class="bi bi-person-vcard-fill"></i></div>
+          <h4>Personal Driver</h4>
+          <p class="text-secondary">Looking for a regular or full-time driver? Find candidates based on your requirements.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="icon-box"><i class="bi bi-building-fill"></i></div>
+          <h4>Corporate Driver</h4>
+          <p class="text-secondary">Driver requirements for offices, executives, company vehicles and regular business travel.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="icon-box"><i class="bi bi-moon-stars-fill"></i></div>
+          <h4>Night Driver</h4>
+          <p class="text-secondary">Going out at night? Arrange a driver to get you and your vehicle home safely.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="icon-box"><i class="bi bi-calendar-event-fill"></i></div>
+          <h4>Event & Wedding</h4>
+          <p class="text-secondary">Professional drivers for weddings, parties, events and special occasions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section-padding why-section" id="how-it-works">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge badge-soft rounded-pill px-3 py-2 mb-2">Simple Process</span>
+      <h2 class="section-title">How All India Drivers works</h2>
+      <p class="section-subtitle mx-auto">Getting a driver should be simple, transparent and convenient.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="step-card text-center">
+          <div class="icon-box mx-auto"><i class="bi bi-ui-checks-grid"></i></div>
+          <span class="badge bg-primary rounded-pill mb-3">01</span>
+          <h4>Tell us your requirement</h4>
+          <p class="text-secondary mb-0">Select the service, city, date and any special requirements.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card text-center">
+          <div class="icon-box mx-auto"><i class="bi bi-people-fill"></i></div>
+          <span class="badge bg-primary rounded-pill mb-3">02</span>
+          <h4>Get driver options</h4>
+          <p class="text-secondary mb-0">We connect you with suitable driver profiles according to your need.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card text-center">
+          <div class="icon-box mx-auto"><i class="bi bi-car-front-fill"></i></div>
+          <span class="badge bg-primary rounded-pill mb-3">03</span>
+          <h4>Confirm & travel</h4>
+          <p class="text-secondary mb-0">Discuss the details, confirm the driver and get on the road.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section-padding" id="why-us">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <span class="badge badge-soft rounded-pill px-3 py-2 mb-3">Why Choose Us</span>
+        <h2 class="section-title display-6">Built around convenience and trust</h2>
+        <p class="text-secondary mt-3">
+          Whether you need a driver for one day or regular personal service,
+          All India Drivers is designed to make the search and booking process easier.
+        </p>
+
+        <div class="row g-3 mt-3">
+          <div class="col-sm-6">
+            <div class="d-flex gap-3">
+              <i class="bi bi-patch-check-fill text-primary fs-4"></i>
+              <div><strong>Verified profiles</strong><br><span class="small-note">Driver verification process</span></div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex gap-3">
+              <i class="bi bi-telephone-fill text-primary fs-4"></i>
+              <div><strong>Easy communication</strong><br><span class="small-note">Quick contact & booking</span></div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex gap-3">
+              <i class="bi bi-geo-fill text-primary fs-4"></i>
+              <div><strong>Multiple cities</strong><br><span class="small-note">Expand across India</span></div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex gap-3">
+              <i class="bi bi-clock-fill text-primary fs-4"></i>
+              <div><strong>Flexible service</strong><br><span class="small-note">Hourly, daily or regular</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="p-4 p-lg-5 rounded-4 bg-dark text-white">
+          <h3 class="fw-bold">Safety first</h3>
+          <p class="text-white-50">
+            For a better experience, driver onboarding can include identity,
+            driving licence and background verification before profiles are listed.
+          </p>
+          <hr class="border-secondary">
+          <div class="d-flex gap-3 mb-3">
+            <i class="bi bi-card-text fs-4 text-primary"></i>
+            <span>Driving licence verification</span>
+          </div>
+          <div class="d-flex gap-3 mb-3">
+            <i class="bi bi-person-check-fill fs-4 text-primary"></i>
+            <span>Identity verification</span>
+          </div>
+          <div class="d-flex gap-3">
+            <i class="bi bi-shield-lock-fill fs-4 text-primary"></i>
+            <span>Customer-first support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRIVER REGISTRATION CTA -->
+<section class="section-padding pt-0" id="driver-registration">
+  <div class="container">
+    <div class="driver-banner">
+      <div class="row align-items-center">
+        <div class="col-lg-8 position-relative z-1">
+          <span class="badge bg-light text-primary rounded-pill px-3 py-2 mb-3">For Drivers</span>
+          <h2 class="fw-bold display-6">Are you a professional driver?</h2>
+          <p class="lead text-white-50">
+            Join All India Drivers and get opportunities from customers looking for reliable drivers.
+          </p>
+          <a href="#contact" class="btn btn-light mt-2">Register as a Driver</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section-padding why-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge badge-soft rounded-pill px-3 py-2 mb-2">Customer Experience</span>
+      <h2 class="section-title">What customers look for</h2>
+      <p class="section-subtitle mx-auto">A simple experience focused on reliability, communication and convenience.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="testimonial p-4">
+          <div class="stars mb-3">★★★★★</div>
+          <p>“I needed a driver for an outstation trip and wanted someone experienced with long-distance driving.”</p>
+          <strong>— Customer</strong>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial p-4">
+          <div class="stars mb-3">★★★★★</div>
+          <p>“The booking process should be quick and straightforward. I just want to share my requirement and get options.”</p>
+          <strong>— Customer</strong>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial p-4">
+          <div class="stars mb-3">★★★★★</div>
+          <p>“For regular driving needs, finding a dependable driver who matches my schedule is the most important thing.”</p>
+          <strong>— Customer</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section-padding" id="contact">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <span class="badge badge-soft rounded-pill px-3 py-2 mb-3">Contact Us</span>
+        <h2 class="section-title">Need a driver?</h2>
+        <p class="text-secondary">
+          Send your requirement and our team can help you find the right driver.
+        </p>
+
+        <div class="d-flex gap-3 mb-4">
+          <div class="icon-box flex-shrink-0 mb-0"><i class="bi bi-whatsapp"></i></div>
+          <div><strong>WhatsApp</strong><br><span class="text-secondary">Quick booking assistance</span></div>
+        </div>
+
+        <div class="d-flex gap-3 mb-4">
+          <div class="icon-box flex-shrink-0 mb-0"><i class="bi bi-telephone"></i></div>
+          <div><strong>Phone</strong><br><span class="text-secondary">Call for driver requirements</span></div>
+        </div>
+
+        <div class="d-flex gap-3">
+          <div class="icon-box flex-shrink-0 mb-0"><i class="bi bi-envelope"></i></div>
+          <div><strong>Email</strong><br><span class="text-secondary">Support & business enquiries</span></div>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-lg-5">
+          <h4 class="fw-bold mb-4">Send an enquiry</h4>
+          <form id="contactForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Name *</label>
+                <input type="text" class="form-control" id="contactName" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Mobile *</label>
+                <input type="tel" class="form-control" id="contactPhone" pattern="[0-9]{10}" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label">I am *</label>
+                <select class="form-select" id="contactType" required>
+                  <option value="">Select</option>
+                  <option>Looking for a Driver</option>
+                  <option>Looking for Driver Jobs</option>
+                  <option>Corporate / Business Enquiry</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" id="contactMessage" rows="4" placeholder="Tell us what you need..."></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary w-100" type="submit">
+                  <i class="bi bi-send me-2"></i>Send Enquiry
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="pt-5 pb-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <h5 class="text-white fw-bold">All India Drivers</h5>
+        <p class="mt-3">
+          A driver service platform connecting customers with professional drivers
+          for local, outstation, personal and business requirements.
+        </p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="text-white">Quick Links</h6>
+        <ul class="list-unstyled mt-3 lh-lg">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#booking">Book Driver</a></li>
+          <li><a href="#driver-registration">Join as Driver</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="text-white">Support</h6>
+        <ul class="list-unstyled mt-3 lh-lg">
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h6 class="text-white">Service Areas</h6>
+        <p class="mt-3">Local • Outstation • Personal • Corporate • Events</p>
+      </div>
+    </div>
+
+    <hr class="border-secondary my-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between gap-2 small">
+      <span>© <span id="year"></span> All India Drivers. All rights reserved.</span>
+      <span>Professional Driver Service Platform</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="#" id="whatsappFloat" class="floating-whatsapp" aria-label="WhatsApp">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  /*
+    IMPORTANT:
+    Replace this number with your actual WhatsApp number in international format.
+    Example: 919950606818
+  */
+  const WHATSAPP_NUMBER = "919950606818";
+
+  function openWhatsApp(message) {
+    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+  }
+
+  document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const service = document.getElementById("serviceType").value;
+    const city = document.getElementById("city").value.trim();
+    const date = document.getElementById("bookingDate").value;
+    const note = document.getElementById("bookingNote").value.trim();
+
+    const message =
+      `Hello All India Drivers,%0A%0A` +
+      `I need a driver.%0A%0A` +
+      `Name: ${name}%0A` +
+      `Mobile: ${phone}%0A` +
+      `Service: ${service}%0A` +
+      `City: ${city}%0A` +
+      `Date/Time: ${date || "Not specified"}%0A` +
+      `Requirement: ${note || "Not specified"}`;
+
+    openWhatsApp(decodeURIComponent(message));
+  });
+
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("contactName").value.trim();
+    const phone = document.getElementById("contactPhone").value.trim();
+    const type = document.getElementById("contactType").value;
+    const message = document.getElementById("contactMessage").value.trim();
+
+    openWhatsApp(
+      `Hello All India Drivers,\n\n` +
+      `New Enquiry\n\n` +
+      `Name: ${name}\n` +
+      `Mobile: ${phone}\n` +
+      `I am: ${type}\n` +
+      `Message: ${message || "No message"}`
+    );
+  });
+
+  document.getElementById("whatsappFloat").addEventListener("click", function(e) {
+    e.preventDefault();
+    openWhatsApp("Hello All India Drivers, I need a driver.");
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
